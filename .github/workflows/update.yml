@@ -1,9 +1,8 @@
 name: Update Colors
 
-on: push
-# on:
-#   schedule:
-#     - cron: '35 * * * *'
+on:
+  schedule:
+    - cron: '10 10 * * *'
 
 jobs:
   update:
