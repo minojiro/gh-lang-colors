@@ -1,0 +1,23 @@
+{
+  "name": "gh-lang-colors",
+  "version": "0.0.0",
+  "description": "GitHub language colors",
+  "main": "colors.json",
+  "scripts": {
+    "update": "node ./update.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minojiro/gh-lang-colors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minojiro/gh-lang-colors/issues"
+  },
+  "homepage": "https://github.com/minojiro/gh-lang-colors#readme",
+  "devDependencies": {
+    "request": "^2.88.2",
+    "yaml": "^1.10.2"
+  }
+}
