@@ -10,7 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/minojiro/gh-lang-colors.git"
   },
-  "author": "",
+  "keywords": [
+    "github",
+    "programming",
+    "language",
+    "colors",
+    "json"
+  ],
+  "author": "minojiro <minojiro@users.noreply.github.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/minojiro/gh-lang-colors/issues"
