@@ -29,6 +29,7 @@ jobs:
             git commit -m "update colors" -a
             npm version patch
             git push origin HEAD:${GITHUB_REF}
+            git push --tags
             npm publish
           fi
         env:
