@@ -1,3 +1,5 @@
-node_modules
-reflesh.js
 .github
+.gitignore
+node_modules
+update.js
+yarn.lock
