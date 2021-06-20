@@ -2,8 +2,7 @@
 
 [![NPM](https://nodei.co/npm/gh-lang-colors.png)](https://nodei.co/npm/gh-lang-colors/)
 
-A JSON map of languages and colors used on GitHub.
-The JSON file is updated automatically by GitHub Actions.
+JSON of GitHub language colors, automatically maintained by CI.
 
 ## Getting started
 
@@ -18,5 +17,5 @@ npm install --save gh-lang-colors
 ```js
 const GH_LANG_COLORS = require('gh-lang-colors');
 
-console.log(GH_LANG_COLORS['JavaScript']) // #f1e05a
+console.log(GH_LANG_COLORS['JavaScript']); // #f1e05a
 ```
