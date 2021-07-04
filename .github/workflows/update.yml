@@ -1,8 +1,6 @@
 name: Update Colors
 
-on:
-  schedule:
-    - cron: '10 10 */3 * *'
+on: [push]
 
 jobs:
   update:
@@ -18,7 +16,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: update
         run: |
-          yarn install
+          yarn
           yarn run update
       - name: Commit files
         run: |
