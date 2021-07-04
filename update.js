@@ -9,18 +9,19 @@ request(URL, (err, _, body) => {
     throw err
   }
   const data = YAML.parse(body)
-  const result = Object
-    .entries(data)
-    .filter(([_, o]) => o.color)
-    .reduce(
+  const languages = Object.entries(data).filter(([_, o]) => o.color)
+  const result = languages.reduce(
       (colors, [language, {color}]) => ({
         ...colors,
         [language]: color.toLowerCase(),
       })
     , {})
+  const languageNames = Object.keys(result)
+  console.log(`${languageNames.length} of languages`)
+  console.log(languages.map(o => `${o[0]}: ${o[1].color}`).join('\n'))
   fs.writeFileSync(
     'colors.json',
     JSON.stringify(result, null, 2)
   )
-  console.log('done')
+  console.log('saved')
 })
