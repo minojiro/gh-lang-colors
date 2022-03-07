@@ -1,6 +1,6 @@
 {
   "name": "gh-lang-colors",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "JSON of GitHub language colors, automatically maintained by CI.",
   "main": "colors.json",
   "scripts": {
