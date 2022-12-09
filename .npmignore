@@ -1,5 +1,8 @@
 .github
 .gitignore
-node_modules
-update.js
-yarn.lock
+.npmignore
+cmd
+go.mod
+go.sum
+main.go
+package-lock.json

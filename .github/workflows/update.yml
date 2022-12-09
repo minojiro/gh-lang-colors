@@ -7,19 +7,22 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 2
     steps:
       - uses: actions/checkout@v2
         with:
           ref: main
+      - uses: actions/setup-go@v3
+        with:
+          go-version-file: "go.mod"
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-          cache: 'yarn'
+          cache: 'npm'
       - name: update
         run: |
-          yarn install
-          yarn run update
+          go test ./cmd
+          go run main.go
       - name: Commit files
         run: |
           git config --local user.email "minojiro@users.noreply.github.com"

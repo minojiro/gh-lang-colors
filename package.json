@@ -3,9 +3,6 @@
   "version": "0.0.28",
   "description": "JSON of GitHub language colors, automatically maintained by CI.",
   "main": "colors.json",
-  "scripts": {
-    "update": "node ./update.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/minojiro/gh-lang-colors.git"
@@ -22,9 +19,5 @@
   "bugs": {
     "url": "https://github.com/minojiro/gh-lang-colors/issues"
   },
-  "homepage": "https://github.com/minojiro/gh-lang-colors#readme",
-  "devDependencies": {
-    "request": "^2.88.2",
-    "yaml": "^1.10.2"
-  }
+  "homepage": "https://github.com/minojiro/gh-lang-colors#readme"
 }
