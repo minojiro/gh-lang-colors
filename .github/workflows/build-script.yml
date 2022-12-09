@@ -1,0 +1,31 @@
+name: Build Script
+
+on:
+  push:
+    branches:
+      - 'scripts/**'
+
+jobs:
+  build_script:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-go@v3
+        with:
+          go-version-file: "go.mod"
+      - name: test
+        run: |
+          go test ./cmd
+      - name: Commit files
+        run: |
+          git config --local user.email "minojiro@users.noreply.github.com"
+          git config --local user.name "minojiro"
+          if (git diff --shortstat | grep '[0-9]'); then \
+            go build main.go
+            git add ./main
+            git commit -m "rebuild binary" -a
+            git push origin HEAD:${GITHUB_REF}
+          fi
