@@ -1,6 +1,7 @@
 name: Build Script
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'scripts/**'
@@ -10,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
       - uses: actions/setup-go@v3
