@@ -8,6 +8,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    environment:
+      name: prod
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
@@ -17,6 +19,8 @@ jobs:
         with:
           node-version: '16.x'
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+          scope: 'gh-lang-colors'
       - name: update
         run: |
           ./main
@@ -30,7 +34,10 @@ jobs:
             npm version patch
             git push origin HEAD:${GITHUB_REF}
             git push --tags
-            npm publish
+            npm publish --access=public
+          else
+            echo "差分がありません"
+            exit 1
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
