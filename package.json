@@ -1,8 +1,9 @@
 {
   "name": "gh-lang-colors",
-  "version": "0.0.29",
+  "version": "0.1.0",
   "description": "JSON of GitHub language colors, automatically maintained by CI.",
   "main": "colors.json",
+  "types": "./colors.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/minojiro/gh-lang-colors.git"
@@ -16,6 +17,9 @@
   ],
   "author": "minojiro <minojiro@users.noreply.github.com>",
   "license": "ISC",
+  "files": [
+    "colors.json"
+  ],
   "bugs": {
     "url": "https://github.com/minojiro/gh-lang-colors/issues"
   },
