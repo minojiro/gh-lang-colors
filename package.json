@@ -16,6 +16,9 @@
   ],
   "author": "minojiro <minojiro@users.noreply.github.com>",
   "license": "ISC",
+  "files": [
+    "colors.json"
+  ],
   "bugs": {
     "url": "https://github.com/minojiro/gh-lang-colors/issues"
   },
