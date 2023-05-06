@@ -3,6 +3,7 @@
   "version": "0.0.29",
   "description": "JSON of GitHub language colors, automatically maintained by CI.",
   "main": "colors.json",
+  "types": "./colors.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/minojiro/gh-lang-colors.git"
