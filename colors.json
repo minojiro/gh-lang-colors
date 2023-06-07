@@ -517,6 +517,8 @@
   "Volt": "#1f1f1f",
   "Vue": "#41b883",
   "Vyper": "#2980b9",
+  "WDL": "#42f1f4",
+  "WGSL": "#1a5e9a",
   "Web Ontology Language": "#5b70bd",
   "WebAssembly": "#04133b",
   "WebAssembly Interface Type": "#6250e7",
@@ -561,7 +563,6 @@
   "q": "#0040cd",
   "reStructuredText": "#141414",
   "sed": "#64b970",
-  "wdl": "#42f1f4",
   "wisp": "#7582d1",
   "xBase": "#403a40"
 }
