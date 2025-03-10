@@ -21,9 +21,11 @@ jobs:
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
           scope: 'gh-lang-colors'
+      - uses: actions/setup-go@v3
+        with:
+          go-version-file: "go.mod"
       - name: update
-        run: |
-          ./main
+        run: go run main.go
       - name: Commit files
         run: |
           git config --local user.email "minojiro@users.noreply.github.com"
