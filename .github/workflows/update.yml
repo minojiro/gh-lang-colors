@@ -15,17 +15,14 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '24.1.0'
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
           scope: 'gh-lang-colors'
-      - uses: actions/setup-go@v3
-        with:
-          go-version-file: "go.mod"
       - name: update
-        run: go run main.go
+        run: node ./update.ts
       - name: Commit files
         run: |
           git config --local user.email "minojiro@users.noreply.github.com"
