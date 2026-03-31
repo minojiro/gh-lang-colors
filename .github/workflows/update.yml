@@ -11,6 +11,9 @@ jobs:
     environment:
       name: prod
     timeout-minutes: 2
+    permissions:
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v6
         with:
@@ -32,9 +35,7 @@ jobs:
             npm version patch
             git push origin HEAD:${GITHUB_REF}
             git push --tags
-            npm publish --access=public
+            npm publish --access=public --provenance
           else
             echo "差分がありません"
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
