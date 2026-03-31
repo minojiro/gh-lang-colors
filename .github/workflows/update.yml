@@ -35,7 +35,7 @@ jobs:
             git commit -m "update colors"
             npm version patch
             git push origin HEAD:${GITHUB_REF}
-            git push --tags
+            git push --tags --force
             npm publish --access=public --provenance
           else
             echo "差分がありません"
