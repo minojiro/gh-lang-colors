@@ -3,7 +3,7 @@ name: Update Colors
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 10 */3 * *'
+    - cron: "10 10 */3 * *"
 
 jobs:
   update:
@@ -12,34 +12,29 @@ jobs:
       name: prod
     timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.ref }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20.x'
-          cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
-          scope: 'gh-lang-colors'
-      - uses: actions/setup-go@v3
-        with:
-          go-version-file: "go.mod"
+          node-version: "24.x"
+          registry-url: "https://registry.npmjs.org"
+          scope: "gh-lang-colors"
       - name: update
-        run: go run main.go
+        run: node update.js
       - name: Commit files
         run: |
           git config --local user.email "minojiro@users.noreply.github.com"
           git config --local user.name "minojiro"
           if (git diff --shortstat | grep '[0-9]'); then \
             git add colors.json
-            git commit -m "update colors" -a
+            git commit -m "update colors"
             npm version patch
             git push origin HEAD:${GITHUB_REF}
             git push --tags
             npm publish --access=public
           else
             echo "差分がありません"
-            exit 1
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
