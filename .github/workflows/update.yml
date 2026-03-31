@@ -30,9 +30,10 @@ jobs:
           git config --local user.email "minojiro@users.noreply.github.com"
           git config --local user.name "minojiro"
           if (git diff --shortstat | grep '[0-9]'); then \
-            git add colors.json
+            npm pkg set version=$(npm view gh-lang-colors version)
+            git add colors.json package.json
             git commit -m "update colors"
-            npm version $(node -e "const v=require('child_process').execSync('npm view gh-lang-colors version').toString().trim().split('.'); v[2]++; console.log(v.join('.'))")
+            npm version patch
             git push origin HEAD:${GITHUB_REF}
             git push --tags
             npm publish --access=public --provenance
